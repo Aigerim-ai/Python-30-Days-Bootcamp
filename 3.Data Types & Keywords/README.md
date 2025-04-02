@@ -545,5 +545,3 @@ outer()  # Output: 10
 - Python keywords are reserved words that have specific meanings.
 - They **cannot be used as variable names**.
 - They control the flow of a Python program.
-
-Would you like some **practice exercises** to test your understanding? 🚀
