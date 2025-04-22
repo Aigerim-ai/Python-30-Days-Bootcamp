@@ -1,5 +1,7 @@
 # 🎯 Number Guessing Game - Assignment
 
+![Simple Diagram](diagram.png)
+
 ## Objective
 
 Create a Python console application that challenges the user to guess a randomly selected number between 1 and 100 within a limited number of attempts.
