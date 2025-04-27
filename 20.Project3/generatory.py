@@ -1,20 +1,22 @@
 import string
 import secrets
 
+def yes_or_no(prompt):
+    return input(prompt).strip().lower() == 'y'
+
 def get_password_parameters():
     while True:
-        try:
-            length = int(input("Password Length: "))
-            if length <= 0:
-                raise ValueError
+        length_input = input("Password Length: ")
+        if length_input.isdigit() and int(length_input) > 0:
+            length = int(length_input)
             break
-        except ValueError:
+        else:
             print("Please enter a positive integer.")
 
-    include_upper = input("Include uppercase letters? (y/n): ").lower() == 'y'
-    include_lower = input("Include lowercase letters? (y/n): ").lower() == 'y'
-    include_numbers = input("Include numbers? (y/n): ").lower() == 'y'
-    include_symbols = input("Include symbols? (y/n): ").lower() == 'y'
+    include_upper = yes_or_no("Include uppercase letters? (y/n): ")
+    include_lower = yes_or_no("Include lowercase letters? (y/n): ")
+    include_numbers = yes_or_no("Include numbers? (y/n): ")
+    include_symbols = yes_or_no("Include symbols? (y/n): ")
 
     char_pool = ""
     if include_upper:
@@ -27,14 +29,16 @@ def get_password_parameters():
         char_pool += "`~!@#:;,./|$%^&*)(_-=+"
 
     if not char_pool:
-        print("You must select at least one character type.")
+        print("You must select at least one character type.\n")
         return get_password_parameters()
 
     return length, char_pool
 
 def generate_password(length, char_pool):
-    return ''.join(secrets.choice(char_pool) for _ in range(length))
-
+    password = ""
+    for _ in range(length):
+        password += secrets.choice(char_pool)
+    return password
 def main():
     print("\n--- Password Generator ---\n")
     length, char_pool = get_password_parameters()
