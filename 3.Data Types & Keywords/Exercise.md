@@ -24,8 +24,8 @@ z = "Hello, World!"
 a = True
 b = [1, 2, 3]
 c = (4, 5, 6)
-d = { "name": "Alice", "age": 25 }
-e = {7, 8, 9}
+d = { "name": "Alice", "age": 25 } dict
+e = {7, 8, 9} set
 ```
 
 3️⃣ **Fix the Errors**  
