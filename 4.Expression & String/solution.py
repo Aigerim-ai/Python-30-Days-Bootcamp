@@ -26,3 +26,7 @@ print("""Python supports:
 - Numbers 
 - Boolean values  
 - Data Structures""")
+#Write a Python script that asks the user for their name and prints a greeting in the format:
+#Hello, [Name]! Welcome to Python programming.
+str_input = input()
+print(f"Hello,{str_input}! Welcome to Python programming.")
